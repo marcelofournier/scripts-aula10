@@ -161,7 +161,7 @@ function menu() {
 clear
 echo "##############################################################################"
 figlet .....CETAM Redes....
-echo  "                         by: prof. marcelo fournier"
+echo  "                         by: prof. marcelo fournier v1.1"
 echo 
 echo "############################## Admin Redes Linux #############################"
 data_aspas=`date`
@@ -175,14 +175,14 @@ echo "##########################################################################
 
 while true; do
   menu 
-  echo    " |  1. Usuários           | 9.  ifconfig     | 17. Doc portas"
-  echo    " |  2. Pacotes            | 10. netstat      | 18. Doc classes" 
-  echo    " |  3. Admin servicos     | 11. ethtool      | 19. Calcula rede"
-  echo    " |  4.                    | 12. route        | 20. Firewall ufw"
-  echo    " |  5. Log do sistema     | 13. whois        | 21. Converte decimal/binário"
-  echo    " |  6. Crontab            | 14. traceroute   | 22. Converte binário/decimal"
-  echo    " |  7. Grupos             | 15. dig          |"
-  echo    " |  8. Journal log        | 16. geoiplookup  |"
+  echo    " |  1. Usuários           | 9.  ifconfig      | 17. Doc portas"
+  echo    " |  2. Pacotes            | 10. netstat     * | 18. Doc classes" 
+  echo    " |  3. Admin servicos     | 11. ethtool     * | 19. Calcula rede"
+  echo    " |  4. Nmap na rede       | 12. route       * | 20. Firewall ufw"
+  echo    " |  5. Log do sistema     | 13. whois       * | 21. Converte decimal/binário"
+  echo    " |  6. Crontab            | 14. traceroute  * | 22. Converte binário/decimal"
+  echo    " |  7. Grupos             | 15. dig         * |"
+  echo    " |  8. Journal log        | 16. geoiplookup * | (*) Não implementado. "
   read -p " | Escolha uma opção (0 para SAIR): " opcao
 
   case $opcao in
@@ -196,7 +196,7 @@ while true; do
       sudo ./xservicos.sh
       aguarde;;
     4)
-      divisao
+      sudo ./xnmap.sh
       aguarde;;
     5)
       ./xlog.sh
@@ -212,7 +212,7 @@ while true; do
     8) ./xjournal.sh
        aguarde;;
        
-    9) prepara
+    9) sudo ./xifconfig.sh
        aguarde;;
     17) doc_portas;;
     18) doc_classes_rede;; 
