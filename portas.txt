@@ -1,0 +1,16 @@
+SSH (Secure Shell)	22
+HTTP (Web)	80
+HTTPS (Web SSL)	443
+FTP (File Transfer Protocol)	21
+FTPS (FTP SSL)	990
+SMTP (Email - envio)	25
+SMTPS (SMTP SSL)	465
+POP3 (Email - recebimento)	110
+POP3S (POP3 SSL)	995
+IMAP (Email - recebimento)	143
+IMAPS (IMAP SSL)	993
+DNS (Domain Name System)	53
+DHCP (Dynamic Host Configuration Protocol)	67/68
+SNMP (Simple Network Management Protocol)	161/162
+RDP (Remote Desktop Protocol)	3389
+
