@@ -21,32 +21,35 @@ function aguarde() {
 
 # Função para verificar hosts ativos na rede
 function verificar_hosts_ativos() {
-    echo "Digite o intervalo de IPs para verificar (exemplo: 192.168.0.1-100): "
-    read ip_range
+    
+    read -p "Digite o intervalo de IPs para verificar (exemplo: 192.168.0.1-100): " ip_range
     sudo nmap -sn $ip_range
+    echo
+    aguarde
 }
 
 # Função para verificar portas abertas em um host
 function verificar_portas_abertas() {
-    echo "Digite o IP do host para verificar as portas abertas: "
-    read host_ip
+    read -p "Digite o IP do host para verificar as portas abertas: " host_ip
     sudo nmap -p- $host_ip
+    echo
+    aguarde
 }
+
 
 # Função para escanear uma faixa de IPs
 function escanear_faixa_ips() {
-    echo "Digite a faixa de IPs para escanear (exemplo: 192.168.0.1-100): "
-    read ip_range
+    echo
+    read -p "Digite a faixa de IPs para escanear (exemplo: 192.168.0.1-100): " ip_range
     sudo nmap -p 22,80,443 $ip_range
     echo
     aguarde
-
 }
 
 # Função para verificar o SO de um host
 function verificar_so_host() {
-    echo "Digite o IP do host para verificar o SO: "
-    read host_ip
+    echo
+    read -p "Digite o IP do host para verificar o SO: " host_ip
     sudo nmap -O $host_ip
     echo
     aguarde

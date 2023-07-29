@@ -15,11 +15,15 @@ fi
 
 # Função para habilitar o UFW
 enable_ufw() {
-  ufw enable
+  clear
+  sudo ufw enable
+  echo
+  aguarde
 }
 
 # Função para configurar as políticas padrão
 configure_default_policies() {
+
   ufw default deny incoming
   ufw default allow outgoing
   echo "Políticas padrão configuradas: Negar tráfego de entrada e Permitir tráfego de saída."
@@ -27,21 +31,33 @@ configure_default_policies() {
 
 # Função para abrir uma porta específica
 allow_port() {
+  clear
+  echo
   read -p "Digite o número da porta que deseja permitir: " port_number
   ufw allow "$port_number"/tcp
   echo "Porta $port_number/tcp permitida."
+  echo
+  aguarde
 }
 
 # Função para fechar uma porta específica
 deny_port() {
+  clear
+  echo
   read -p "Digite o número da porta que deseja bloquear: " port_number
   ufw deny "$port_number"/tcp
   echo "Porta $port_number/tcp bloqueada."
+  echo
+  aguarde
 }
 
 # Função para exibir as regras de firewall configuradas
 show_status() {
+  clear
+  echo
   ufw status verbose
+  echo
+  aguarde
 }
 
 instalar() {

@@ -15,6 +15,8 @@ exibir_menu() {
     echo "7. Listar serviços instalados (ativos ou não) no host"
     echo "8. Listar serviços em execução"
     echo "9. Parar e desinstalar completamente um serviço"
+    echo "10. Visualizar journal de serviços"
+    echo "11. Visualizar journal de um serviço específico"
     echo "0. Sair"
     echo "--------------------------------------"
 }
@@ -96,6 +98,23 @@ verificar_status_servico() {
     aguarde
 }
 
+jornal_servico() {
+    clear
+    echo 
+    journalctl 
+    echo
+    aguarde
+}
+
+jornal_um_servico() {
+    clear
+    echo 
+    read -p "Informe serviço desejado: " servico
+    journalctl -u $servico
+    echo
+    aguarde
+}
+
 # Loop do menu
 while true; do
     exibir_menu
@@ -104,30 +123,19 @@ while true; do
     read opcao
 
     case $opcao in
-        1)
-            iniciar_servico
-            ;;
-        2)
-            parar_servico
-            ;;
-        3)
-            reiniciar_servico
-            ;;
-        4)
-            verificar_status_servico
-            ;;
+        1)  iniciar_servico;;
+        2)  parar_servico;;
+        3)  reiniciar_servico;;
+        4)  verificar_status_servico;;
         5)  habilitar_servico;;
         6)  desabilitar_servico;;
         7)  listar_servicos_instalados;;
         8)  listar_servicos_execucao;;
         9)  remover_servico;;
-        0)
-            echo "Saindo..."
-            exit 0
-            ;;
-        *)
-            echo "Opção inválida"
-            ;;
+        10) jornal_servico;;
+        11) jornal_um_servico;;
+        0)  exit 0;;
+        *)  echo "Opção inválida";;
     esac
 
     echo # Linha em branco para melhorar a visualização
