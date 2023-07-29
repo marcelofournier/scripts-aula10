@@ -173,6 +173,10 @@ function funcao_dig() {
     sudo ./xdig.sh
 }
 
+function ambientes_graficos() {
+  sudo ./instalar-ambientes-graficos.sh
+}
+
 geolocalizacao() {
   clear
   echo
@@ -192,8 +196,12 @@ function ip_externo() {
   curl ipinfo.io
   echo
   aguarde
-
 }
+
+function documentacao(){
+  ./dicas.sh
+}
+
 
 function menu() {
 # Loop para apresentar o menu até que o usuário escolha a opção de sair
@@ -214,15 +222,16 @@ echo "##########################################################################
 
 while true; do
   menu 
-  echo    " |  1. Usuários           | 9.  ifconfig      | 17. Doc portas"
-  echo    " |  2. Pacotes            | 10. netstat     * | 18. Doc classes" 
-  echo    " |  3. Admin servicos     | 11. ethtool     * | 19. Calcular rede"
-  echo    " |  4. Nmap na rede       | 12. route       * | 20. Firewall ufw"
-  echo    " |  5. Log do sistema     | 13. whois         | 21. Converte decimal/binário"
-  echo    " |  6. Crontab            | 14. traceroute  * | 22. Converte binário/decimal"
-  echo    " |  7. Grupos             | 15. dig           | 23. geoiplookup      "
-  echo    " |  8. Journal log        | 16. nmap          | 24. IP externo "
-  read -p " | Escolha uma opção (0 para SAIR): " opcao
+  echo    " |  1. Usuários           | 9.  ifconfig (ip) | 17. Documentação/dicas       |"
+  echo    " |  2. Pacotes            | 10. netstat (ss)* | 18. Ambiente gráfico         |" 
+  echo    " |  3. Admin servicos     | 11. ethtool     * | 19. Calcular rede            |"
+  echo    " |  4. Nmap na rede       | 12. route       * | 20. Firewall ufw             |"
+  echo    " |  5. Log do sistema     | 13. whois         | 21. Decimal/binário          |"
+  echo    " |  6. Crontab            | 14. traceroute  * | 22. Binário/decimal          |"
+  echo    " |  7. Grupos             | 15. dig           | 23. geoiplookup              |"
+  echo    " |  8. Journal log        | 16. nmap          | 24. IP externo               |"
+  echo    " ----------------------------------------------------------------------------"
+  read -p "  ===> Escolha uma opção (0 para SAIR): " opcao
 
   case $opcao in
     1)
@@ -256,8 +265,8 @@ while true; do
     13) funcao_whois;;
     15) funcao_dig;;
     16) funcao_nmap;;
-    17) doc_portas;;
-    18) doc_classes_rede;; 
+    17) documentacao;;
+    18) ambientes_graficos;; 
     19) calcula_rede;;
     20) firewall_ufw;;
     21) decimal_binario;;

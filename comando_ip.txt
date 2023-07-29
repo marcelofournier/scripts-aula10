@@ -1,0 +1,53 @@
+
+COMAND IP (SUBSTITUI O IFCONFIG)
+
+O comando ip é uma ferramenta moderna e altamente flexível para gerenciar redes no Linux. Ele substituiu o comando ifconfig devido à sua capacidade de lidar com tarefas avançadas de configuração e gerenciamento de rede. Com o ip, os administradores podem exibir informações detalhadas sobre as interfaces, endereços IP, rotas e realizar diversas ações para controlar e otimizar a conectividade de rede em seus sistemas Linux.
+
+O comando ip é uma ferramenta poderosa e versátil utilizada em sistemas operacionais baseados em Unix, incluindo o Linux, para gerenciar e configurar diversos aspectos da rede, substituindo o comando mais antigo ifconfig. O ip pertence ao conjunto de ferramentas iproute2 e oferece maior flexibilidade e recursos em relação ao ifconfig, permitindo aos administradores de rede realizar uma variedade de tarefas avançadas de configuração e monitoramento de rede
+
+A sintaxe básica do comando ip é a seguinte:
+
+ip [opção] objeto comando
+
+opção: São opções adicionais para personalizar a saída do comando ou definir determinadas configurações.
+objeto: Refere-se ao objeto de rede que você deseja manipular, como "addr" (endereço), "link" (interface de rede), "route" (roteamento), entre outros.
+comando: É a ação que você deseja executar no objeto, como "show" (exibir), "add" (adicionar), "delete" (excluir), entre outras.
+
+
+Exemplos de uso:
+
+Aqui estão alguns exemplos de como usar o comando ip para realizar tarefas comuns de configuração de rede:
+
+$ ip link show
+
+
+Esse comando exibe detalhes de todas as interfaces de rede presentes no sistema, incluindo os nomes das interfaces, o estado (UP/DOWN), os endereços MAC e outras informações.
+
+
+Como configurar um endereço IP para uma interface:
+
+$ sudo ip addr add 192.168.1.100/24 dev eth0
+
+Neste exemplo, o comando atribui o endereço IP "192.168.1.100" à interface "eth0" com uma máscara de sub-rede de "24" bits (255.255.255.0)
+
+Como ativar ou desativar uma interface de rede:
+
+$ sudo ip link set eth0 up
+$ sudo ip link set eth0 down
+
+Como adicionar uma rota estática:
+
+$ sudo ip route add 192.168.2.0/24 via 192.168.1.1 dev eth0
+
+Este comando adiciona uma rota estática para a rede "192.168.2.0/24" através do gateway "192.168.1.1" na interface "eth0".
+
+
+Como exibir tabelas de roteamento:
+
+$ ip route show
+
+Esse comando exibe as tabelas de roteamento do sistema, mostrando as rotas e seus destinos, gateways e interfaces associadas.
+
+
+
+
