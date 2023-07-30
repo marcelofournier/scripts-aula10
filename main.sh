@@ -222,14 +222,14 @@ echo "##########################################################################
 
 while true; do
   menu 
-  echo    " |  1. Usuários           | 9.  ifconfig (ip) | 17. Documentação/dicas       |"
+  echo    " |  1. Usuários           | 9.  ifconfig (ip) | 17. Dicas e notas            |"
   echo    " |  2. Pacotes            | 10. netstat (ss)* | 18. Ambiente gráfico         |" 
   echo    " |  3. Admin servicos     | 11. ethtool     * | 19. Calcular rede            |"
   echo    " |  4. Nmap na rede       | 12. route       * | 20. Firewall ufw             |"
   echo    " |  5. Log do sistema     | 13. whois         | 21. Decimal/binário          |"
   echo    " |  6. Crontab            | 14. traceroute  * | 22. Binário/decimal          |"
   echo    " |  7. Grupos             | 15. dig           | 23. geoiplookup              |"
-  echo    " |  8. Journal log        | 16. nmap          | 24. IP externo               |"
+  echo    " |  8. Journal log        | 16. nmap          | 24. IP externo  25. Glossário|"
   echo    " ----------------------------------------------------------------------------"
   read -p "  ===> Escolha uma opção (0 para SAIR): " opcao
 
@@ -273,6 +273,7 @@ while true; do
     22) binario_decimal;;
     23) geolocalizacao;;
     24) ip_externo;;
+    25) ./glossario.sh;;
     0)
       sair;;
       
