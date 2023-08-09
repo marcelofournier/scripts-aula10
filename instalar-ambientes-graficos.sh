@@ -48,29 +48,35 @@ function display_menu() {
 #1
 function _ubuntu-gnome-desktop() {
     sudo apt install ubuntu-gnome-desktop -y
+    aguarde
     }
 
 #2
 function _xubuntu-desktop() {
     sudo apt install xubuntu-desktop -y
+    aguarde
     }
 
 #3
 function _Lubuntu-desktop() {
     sudo apt install Lubuntu-desktop -y
+    aguarde
     }
 
 #4
 function _kubuntu-desktop() {
     sudo apt install kubuntu-desktop -y
+    aguarde
     }
 #5
 function _mate-desktop-environment() {
     sudo apt install mate-desktop-environment -y
+    aguarde
     }
 #6
 function _kde_full() {
     sudo apt install kde-full -y
+    aguarde
     }
 
 #7
@@ -78,27 +84,32 @@ function _elementary-os() {
     sudo add-apt-repository ppa:elementary-os/stable -y
     atualizar
     sudo apt install elementary-desktop -y
+    aguarde
 }
 
 #8
 _blackbox() {
     sudo apt install blackbox blackbox-themes -y
+    aguarde
     }
 
 #9 
 function _herbstluftwm() {
     sudo apt install herbstluftwm -y
+    aguarde
     }
 
 #10
 function _awesome() {
     sudo apt install awesome -y
+    aguarde
     }
 
 #11
 #bspwm
 function _bspwm() {
     sudo apt install bspwm sxhkd -y
+    aguarde
     }
 
 #12
@@ -106,21 +117,25 @@ function _bspwm() {
 function _qtile() {
     sudo apt install python3-pip -y
     pip install xcffib pip install qtile -y
+    aguarde
 }
 
 #13
 function _icewm() {
     sudo apt install icewm -y
+    aguarde
     }
 
 #14
 function _i3() {
     sudo apt install i3 -y
+    aguarde
     }
 
 #15
 function _sway() {
     sudo apt install sway -y
+    aguarde
     }
 
 while true; do

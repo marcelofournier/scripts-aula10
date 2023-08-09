@@ -7,6 +7,7 @@ exibir_menu() {
     echo "1. Adicionar usuário"
     echo "2. Remover usuário"
     echo "3. Listar usuários"
+    echo "4. Usuarios logados"
     echo "0. Sair"
     echo "-------------------------------------------"
 }
@@ -39,6 +40,18 @@ listar_usuarios() {
     aguarde
 }
 
+logados() {
+  while true; do
+    clear
+    echo "Usuários logados na máquina local e seus respectivos IPs:"
+    echo "---------------------------------------------------------"
+    who | awk '{print $1, $5}'
+    sleep 30  # intervalo de atualização em segundos (pode ser ajustado)
+done
+
+
+}
+
 # Loop do menu
 while true; do
     exibir_menu
@@ -47,22 +60,13 @@ while true; do
     read opcao
 
     case $opcao in
-        1)
-            adicionar_usuario
-            ;;
-        2)
-            remover_usuario
-            ;;
-        3)
-            listar_usuarios
-            ;;
-        0)
-            echo "Saindo..."
-            exit 0
-            ;;
-        *)
-            echo "Opção inválida"
-            ;;
+        1)  adicionar_usuario;;
+        2)  remover_usuario;;
+        3)  listar_usuarios;;
+        4)  logados;;
+        0)  exit 0;;
+        *)  echo "Opção inválida"
+            aguarde ;;
     esac
 
     echo # Linha em branco para melhorar a visualização

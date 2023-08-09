@@ -208,6 +208,7 @@ function menu() {
 clear
 echo "##############################################################################"
 figlet .....CETAM Redes....
+echo "                   CENTRO DE EDUCAÇÃO TECNOLÓGICA DO AMAZONAS"
 echo  "                         by: prof. marcelo fournier v1.1"
 echo 
 echo "############################## Admin Redes Linux #############################"
@@ -224,12 +225,14 @@ while true; do
   menu 
   echo    " |  1. Usuários           | 9.  ifconfig (ip) | 17. Dicas e notas            |"
   echo    " |  2. Pacotes            | 10. netstat (ss)* | 18. Ambiente gráfico         |" 
-  echo    " |  3. Admin servicos     | 11. ethtool     * | 19. Calcular rede            |"
-  echo    " |  4. Nmap na rede       | 12. route       * | 20. Firewall ufw             |"
+  echo    " |  3. Servicos           | 11. ethtool     * | 19. Calcular rede            |"
+  echo    " |  4. Nmap na rede       | 12. roteamento    | 20. Firewall ufw             |"
   echo    " |  5. Log do sistema     | 13. whois         | 21. Decimal/binário          |"
   echo    " |  6. Crontab            | 14. traceroute  * | 22. Binário/decimal          |"
   echo    " |  7. Grupos             | 15. dig           | 23. geoiplookup              |"
   echo    " |  8. Journal log        | 16. nmap          | 24. IP externo  25. Glossário|"
+  echo    " ----------------------------------------------------------------------------"
+  echo    " |  30. Discos            | 31. USBs          | 32. Espaço em RAM e discos   |"
   echo    " ----------------------------------------------------------------------------"
   read -p "  ===> Escolha uma opção (0 para SAIR): " opcao
 
@@ -262,6 +265,8 @@ while true; do
        
     9) sudo ./xifconfig.sh
        aguarde;;
+    12) ./rotas.sh
+        aguarde;;   
     13) funcao_whois;;
     15) funcao_dig;;
     16) funcao_nmap;;
@@ -274,7 +279,20 @@ while true; do
     23) geolocalizacao;;
     24) ip_externo;;
     25) ./glossario.sh;;
-    0)
+    
+    30) clear
+        lsblk
+        aguarde;;
+    31) clear
+        lsusb -tv
+        aguarde;;
+    32) clear
+        figlet "ram e discos"
+        free -h
+        echo
+        df -h
+        aguarde;;
+    0)  
       sair;;
       
     *)

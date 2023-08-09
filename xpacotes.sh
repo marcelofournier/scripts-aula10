@@ -14,17 +14,20 @@ aguarde(){
 # Função para atualizar a lista de pacotes disponíveis
 update_packages() {
   apt update
+  aguarde
 }
 
 # Função para atualizar pacotes instalados
 upgrade_packages() {
   apt upgrade -y
+  aguarde
 }
 
 # Função para instalar um pacote
 install_package() {
   read -p "Digite o nome do pacote que deseja instalar: " package_name
   apt install -y "$package_name"
+  aguarde
 }
 
 # Função para remover um pacote

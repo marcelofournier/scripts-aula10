@@ -3,9 +3,11 @@
 # Função para exibir o dashboard
 function show_dashboard() {
   tput clear
-  echo "==========================="
+   figlet dashoboard
+   echo
+#  echo "==========================="
   echo " Dashboard - Hosts Ativos  "
-  echo "==========================="
+  echo " ---------------------------------------------------------------------"
   echo
 
   # Executa o Nmap na rede local e filtra hosts ativos
