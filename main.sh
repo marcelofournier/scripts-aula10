@@ -202,6 +202,22 @@ function documentacao(){
   ./dicas.sh
 }
 
+velocidade_conexao() {
+  clear
+  figlet "Teste da conexão"
+  sudo apt-get install speedtest-cli
+  speedtest-cli
+  aguarde
+}
+
+anti_virus() {
+  clear
+  figlet "antivirus"
+  sudo apt install clamav clamav-daemon clamav-freshclam clamtk -y
+  clamscan ~/
+  aguarde
+  
+}
 
 function menu() {
 # Loop para apresentar o menu até que o usuário escolha a opção de sair
@@ -231,8 +247,9 @@ while true; do
   echo    " |  6. Crontab            | 14. traceroute  * | 22. Binário/decimal          |"
   echo    " |  7. Grupos             | 15. dig           | 23. geoiplookup              |"
   echo    " |  8. Journal log        | 16. nmap          | 24. IP externo  25. Glossário|"
-  echo    " ----------------------------------------------------------------------------"
+  #echo    " ----------------------------------------------------------------------------"
   echo    " |  30. Discos            | 31. USBs          | 32. Espaço em RAM e discos   |"
+  echo    " |  33. Speed conexão     | 34. Antivirus     | 35. Checar vulnerabilidades  |"
   echo    " ----------------------------------------------------------------------------"
   read -p "  ===> Escolha uma opção (0 para SAIR): " opcao
 
@@ -292,6 +309,9 @@ while true; do
         echo
         df -h
         aguarde;;
+    33) velocidade_conexao;;
+    34) ./xclamav.sh;;
+    35) ./xrkhunter.sh;;
     0)  
       sair;;
       
