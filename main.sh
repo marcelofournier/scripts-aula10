@@ -250,7 +250,7 @@ while true; do
   echo    "| 1. Usuários      | 11. Antivirus         | 21. Roteamento rede   | 31. Monitorar espaco|"
   echo    "| 2. Grupos        | 12. Vulnerabilidades  | 22. Calcular rede IP  | 32. Mon alterações  |" 
   echo    "| 3. Programas     | 13. IP interno        | 23. Geolocalização IP | 33. Falhas no boot  |"
-  echo    "| 4. Memória       | 14. IP externo        | 24. python web server | 34.                 |"
+  echo    "| 4. Memória       | 14. IP externo        | 24. python web server | 34. Conexões/arquivo|"
   echo    "| 5. Discos        | 15. Placas de rede    | 25. Gerar carga CPU   | 35. Ambiente gráfico|" 
   echo    "| 6. USBs          | 16. Tráfego na rede   | 26. whois             | 36. Decimal/binário |"
   echo    "| 7. Serviços      | 17. Varredura rede    | 27. dig               | 37. Binário/decimal |"
@@ -378,7 +378,11 @@ while true; do
         sudo cat /var/log/boot.log | more
         linha
         aguarde;;
-
+        
+    34) #arquivos abertos por conexões de rede/usuario
+        clear
+        watch lsof -i;;
+        
     35) ambientes_graficos;; 
     36) decimal_binario;;
     37) binario_decimal;;
