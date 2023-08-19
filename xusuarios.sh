@@ -16,6 +16,8 @@ exibir_menu() {
     echo "2. Remover usuário"
     echo "3. Listar usuários"
     echo "4. Usuarios logados"
+    echo "5. Últimos logins bem sucedidos"
+    echo "6. Tentativas de logins mal sucedidas"
     echo "0. Sair"
     linha
 }
@@ -24,6 +26,7 @@ function aguarde() {
   read -p "Pressione qualquer tecla para continuar..." tecla
 
 }
+
 
 # Função para adicionar um novo usuário
 adicionar_usuario() {
@@ -72,6 +75,21 @@ while true; do
         2)  remover_usuario;;
         3)  listar_usuarios;;
         4)  logados;;
+        5)  clear
+            figlet "logins"
+            linha
+            echo "Registro de logins bem sucedidos"
+            linha
+            last
+            aguarde;;
+        6)  clear
+            figlet "bad logins"
+            linha
+            echo "Registro de tentativas logins"
+            linha
+            sudo lastb
+            aguarde;;
+
         0)  exit 0;;
         *)  echo "Opção inválida"
             aguarde ;;

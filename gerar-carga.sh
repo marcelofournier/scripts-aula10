@@ -1,4 +1,14 @@
 #!/bin/bash
+linha() {
+    echo "------------------------------------------------------------------"
+}
+
+clear
+figlet "cpu carga"
+linha
+echo "Gerando carga na CPU para teste de estresse do sistema"
+linha
+echo
 
 # Número de processos 'yes' a serem executados em paralelo
 NUM_PROCESSOS=4

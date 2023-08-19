@@ -247,16 +247,16 @@ while true; do
   menu 
   echo    "| SERVIÇOS LOCAIS  |   SERVIÇOS DE REDE    |       DIVERSOS        |    OUTROS & DOCS    |"
   linha
-  echo    "| 1. Usuários      | 11. Antivirus         | 21. Roteamento rede   | 31. Ambiente gráfico|"
-  echo    "| 2. Grupos        | 12. Vulnerabilidades  | 22. Calcular rede IP  | 32.                 |" 
-  echo    "| 3. Programas     | 13. IP interno        | 23. Geolocalização IP | 33.                 |"
+  echo    "| 1. Usuários      | 11. Antivirus         | 21. Roteamento rede   | 31. Monitorar espaco|"
+  echo    "| 2. Grupos        | 12. Vulnerabilidades  | 22. Calcular rede IP  | 32. Mon alterações  |" 
+  echo    "| 3. Programas     | 13. IP interno        | 23. Geolocalização IP | 33. Falhas no boot  |"
   echo    "| 4. Memória       | 14. IP externo        | 24. python web server | 34.                 |"
-  echo    "| 5. Discos        | 15. Placas de rede    | 25. Gerar carga CPU   | 35.                 |" 
+  echo    "| 5. Discos        | 15. Placas de rede    | 25. Gerar carga CPU   | 35. Ambiente gráfico|" 
   echo    "| 6. USBs          | 16. Tráfego na rede   | 26. whois             | 36. Decimal/binário |"
   echo    "| 7. Serviços      | 17. Varredura rede    | 27. dig               | 37. Binário/decimal |"
-  echo    "| 8. Crontab       | 18. Conexões na rede  | 28. journal log       | 38. Dicas e notas   |"
-  echo    "| 9. Firewall      | 19. Speed test        | 29.                   | 39. Glossário       |"
-  echo    "| 10. SSH tools    | 20. Largura de banda  | 30.                   | 40. Host shutdown   |"
+  echo    "| 8. Crontab       | 18. Conexões na rede  | 28. Log do sistema    | 38. Dicas e notas   |"
+  echo    "| 9. Firewall      | 19. Speed test        | 29. journal log       | 39. Glossário       |"
+  echo    "| 10. SSH tools    | 20. Largura de banda  | 30. Atividade em disco| 40. Host shutdown   |"
   linha
   read -p " ===> Escolha uma opção (0 para SAIR): " opcao 
 
@@ -344,21 +344,49 @@ while true; do
   
     26) funcao_whois;;
     27) funcao_dig;;
+    28) ./xlog.sh;;
+    29) ./xjournal.sh;;
+    30) #iotop
+        clear
+        sudo iotop -o
+        aguarde;;
 
-    28) ./xjournal.sh;;
+    31) clear
+        figlet "disco free"
+        linha
+        echo "Monitorando o espaço em disco em tempo real"
+        watch -d df -h
+        linha
+        aguarde;;
+    32) clear
+        figlet "alteracoes"
+        linha
+        echo "Monitorando alterações em diretórios e arquivos"
+        linha
+        read -p "Informe o diretório para monitoramento: " diretorio
+        read -p "Informe o caminho completo e o nome do arquivo de destino: " destino
+        sudo apt install iwatch -y
+        iwatch -r $diretorio > $destino
+        linha
+        aguarde;;
+    33) 
+        clear
+        figlet "boot fail"
+        linha
+        echo "Monitorando falhas durante o boot"
+        linha
+        sudo cat /var/log/boot.log | more
+        linha
+        aguarde;;
 
-
-    31) ambientes_graficos;; 
+    35) ambientes_graficos;; 
     36) decimal_binario;;
     37) binario_decimal;;
     38) documentacao;;
     39) ./glossario.sh;;
 
 
-    40) clear
-        figlet "shutdown"
-        linha
-        sudo shutdown now;;
+    40) ./xdesligar.sh;;
     0)  
       sair;;
       

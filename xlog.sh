@@ -14,6 +14,7 @@ show_menu() {
     echo "2. Limpar log do sistema"
     echo "3. Filtrar log por termo/palavra"
     echo "4. Monitorar em tempo real o log do sistema"
+    echo "5. Visualizar mensagens de erro no log do sistema"
     echo "0. Sair"
     linha
 }
@@ -70,7 +71,10 @@ while true; do
             clear_system_log
             ;;
         3)  filtrar_log;;
-        4)  monitorar_log;; 
+        4)  monitorar_log;;
+        5)  clear
+            tail -f /var/log/syslog | grep "erro"
+            aguarde;;
         0) exit 0;;
         *)
             echo "Opção inválida. Tente novamente."
