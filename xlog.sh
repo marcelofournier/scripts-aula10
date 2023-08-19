@@ -1,16 +1,21 @@
 #!/bin/bash
+linha() {
+    echo "------------------------------------------------------------------"
+}
 
 # Função para exibir o menu
 show_menu() {
-    echo "--------------------------------------"
-    echo "           Gerenciador de Logs"
-    echo "--------------------------------------"
+    clear
+    figlet "system log"
+    linha
+    echo " Menu de opções - Gerenciador de Logs"
+    linha
     echo "1. Visualizar log do sistema"
     echo "2. Limpar log do sistema"
     echo "3. Filtrar log por termo/palavra"
     echo "4. Monitorar em tempo real o log do sistema"
     echo "0. Sair"
-    echo "--------------------------------------"
+    linha
 }
 
 monitorar_log() {

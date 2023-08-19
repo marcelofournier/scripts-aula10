@@ -1,17 +1,21 @@
 #!/bin/bash
-
+linha() {
+    echo "------------------------------------------------------------------"
+}
 # Função para exibir o menu de opções
 function exibir_menu() {
     clear
     figlet nmap na rede
-    echo
-    echo "Menu de Opções:"
+    linha
+    echo " Menu de Opções - nmap varredura de rede"
+    linha
     echo "1. Verificar hosts ativos na rede"
     echo "2. Verificar portas abertas em um host"
     echo "3. Escanear uma faixa de IPs"
     echo "4. Verificar o SO de um host"
     echo "0. Sair"
-    echo -n "Escolha uma opção: "
+    linha
+    echo -n "Selecione a opção desejada: "
 }
 
 function aguarde() {

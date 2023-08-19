@@ -1,15 +1,23 @@
 #!/bin/bash
 
+linha() {
+    echo "------------------------------------------------------------------"
+}
+
+
 # Função para exibir o menu de opções
 exibir_menu() {
     clear
-    echo "----- Menu de Administração de Usuários -----"
+    figlet "usuarios linux"
+    linha
+    echo " Menu de Administração de Usuários"
+    linha
     echo "1. Adicionar usuário"
     echo "2. Remover usuário"
     echo "3. Listar usuários"
     echo "4. Usuarios logados"
     echo "0. Sair"
-    echo "-------------------------------------------"
+    linha
 }
 
 function aguarde() {

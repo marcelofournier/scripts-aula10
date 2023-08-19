@@ -1,5 +1,9 @@
 #!/bin/bash
 
+linha() {
+    echo "------------------------------------------------------------------"
+}
+
 # Verificar se o usuário é root (necessário para usar o APT)
 if [ "$EUID" -ne 0 ]; then
   echo "Este script precisa ser executado com privilégios de superusuário (root)."
@@ -63,7 +67,9 @@ remover_pacotes() {
 while true; do
   clear
   figlet pacotes
-  echo "======== MENU DE OPÇÕES ========"
+  linha
+  echo " Menu de opções - Gerenciamento de pacotes - apt"
+  linha
   echo "1. Atualizar lista de pacotes disponíveis"
   echo "2. Atualizar pacotes instalados"
   echo "3. Instalar um pacote"
@@ -72,6 +78,8 @@ while true; do
   echo "6. Mostrar informações sobre um pacote"
   echo "7. Remover pacotes obsoletos"
   echo "0. Sair"
+  echo
+  linha
   read -p "Digite o número da opção desejada: " option
 
   case $option in
@@ -82,7 +90,7 @@ while true; do
     5) search_package;;
     6) show_package_info;;
     7) remover_pacotes;;
-    0) echo "Encerrando o script. Até mais!"; exit 0;;
+    0) exit 0;;
     *) echo "Opção inválida. Por favor, digite um número válido.";;
   esac
 

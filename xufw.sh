@@ -1,5 +1,7 @@
 #!/bin/bash
-
+linha() {
+    echo "------------------------------------------------------------------"
+}
 # Função para a preparar a tela para reiniciar a calculadora
 function aguarde() {
   echo
@@ -71,8 +73,9 @@ instalar() {
 while true; do
   clear
   figlet firewall
-  echo
-  echo "======== MENU DE OPÇÕES ========"
+  linha
+  echo " Menu de opções - Gerenciamento do firewall"
+  linha
   echo "1. Habilitar o UFW"
   echo "2. Configurar políticas padrão"
   echo "3. Permitir uma porta"
@@ -80,6 +83,7 @@ while true; do
   echo "5. Exibir status das regras"
   echo "6. Instalar o ufw firewall"
   echo "0. Sair"
+  linha
   read -p "Digite o número da opção desejada: " option
 
   case $option in

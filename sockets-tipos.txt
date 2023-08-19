@@ -1,0 +1,8 @@
+RAW Sockets:
+Os sockets RAW (brutos) são utilizados para a comunicação em níveis mais baixos do protocolo da pilha de rede. Eles permitem que os programas acessem e manipulem pacotes de rede em um nível muito granular, incluindo o cabeçalho do pacote. Isso é usado para fins de desenvolvimento de aplicativos de baixo nível, como sniffer de pacotes, ferramentas de diagnóstico de rede e algumas formas de ataque de rede. Geralmente, os programas que utilizam RAW sockets precisam de permissões de superusuário (root) devido ao seu potencial de impacto na rede.
+
+INET Sockets:
+Os sockets INET (Internet sockets) são a forma mais comum de sockets usados em aplicativos de rede. Eles são usados para a comunicação através da pilha de protocolos de rede padrão, como TCP/IP. INET sockets lidam com protocolos de transporte como TCP (Transmission Control Protocol) e UDP (User Datagram Protocol), que são responsáveis por garantir a entrega confiável ou não confiável de dados na rede. A maioria dos aplicativos de rede, como navegadores da web, clientes de e-mail e servidores da web, utiliza sockets INET.
+
+Ao executar o comando ss -s, que exibe estatísticas de sockets, você verá uma saída que inclui várias informações sobre diferentes tipos de sockets, como TCP, UDP, RAW e muito mais. Os contadores exibidos pelo ss -s indicam a quantidade de sockets ativos ou em diferentes estados, como estabelecidos, em espera, etc. Quando você vê contadores para sockets do tipo RAW e INET, isso indica a quantidade de sockets ativos desses tipos na pilha de protocolos de rede do sistema.
+

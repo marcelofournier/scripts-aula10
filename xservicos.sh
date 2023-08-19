@@ -1,11 +1,16 @@
 #!/bin/bash
 
+linha() {
+    echo "------------------------------------------------------------------"
+}
+
 # Função para exibir o menu de opções
 exibir_menu() {
     clear
     figlet servicos
-    echo
-    echo "----- Menu de Gestão de Serviços -----"
+    linha
+    echo " Menu de Gestão de Serviços"
+    linha
     echo "1. Iniciar um serviço"
     echo "2. Parar um serviço"
     echo "3. Reiniciar um serviço"
@@ -18,7 +23,7 @@ exibir_menu() {
     echo "10. Visualizar journal de serviços"
     echo "11. Visualizar journal de um serviço específico"
     echo "0. Sair"
-    echo "--------------------------------------"
+    linha
 }
 
 aguarde(){

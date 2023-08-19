@@ -1,11 +1,14 @@
 #!/bin/bash
-
+linha() {
+    echo "------------------------------------------------------------------"
+}
 # Função para exibir o menu de opções
 exibir_menu() {
     clear
     figlet grupos
-    echo
-    echo "----- Menu de Administração de Grupos -----"
+    linha
+    echo " Menu de Administração de Grupos"
+    linha
     echo "1. Adicionar grupo"
     echo "2. Remover grupo"
     echo "3. Listar grupos"
@@ -14,7 +17,7 @@ exibir_menu() {
     echo "6. Visualizar os grupos de um usuário"
     echo "7. Visualizar os usuários de um grupo"
     echo "0. Sair"
-    echo "------------------------------------------"
+    linha
 }
 
 function aguarde() {

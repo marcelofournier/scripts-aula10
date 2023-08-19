@@ -28,7 +28,7 @@ while true; do
             sudo rkhunter -c --sk
             ;;
         4) sudo cat /var/log/rkhunter.log | more;;
-        5) sudo cat /var/log/rkhunter.log | grep "warning" | more;;
+        5) sudo cat /var/log/rkhunter.log | grep "Warning" | more;;
         6) sudo rm  /var/log/rkhunter.log;;
         0) exit 0;;
         *) echo "Opção inválida. Por favor, escolha uma opção válida."

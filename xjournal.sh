@@ -1,20 +1,21 @@
 #!/bin/bash
-
+linha() {
+    echo "------------------------------------------------------------------"
+}
 # Função para exibir o menu
 show_menu() {
     clear
     figlet journal
-    echo
-    echo "-----------------------------------------"
-    echo "       Gerenciador de Registros"
-    echo "-----------------------------------------"
+    linha
+    echo " Gerenciador de Registros"
+    linha
     echo "1. Visualizar todos os registros"
     echo "2. Visualizar registros de um serviço específico"
     echo "3. Visualizar registros do kernel"
     echo "4. Visualizar registros por período de tempo"
     echo "5. Filtrar registros por palavra-chave"
     echo "0. Sair"
-    echo "-----------------------------------------"
+    linha
 }
 
 function aguarde() {

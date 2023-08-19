@@ -1,5 +1,7 @@
 #!/bin/bash
-
+linha() {
+  echo "-----------------------------------------------------------------------------------------"
+}
 
 # Função para realizar a soma
 function soma() {
@@ -158,10 +160,14 @@ function binario_decimal() {
 function funcao_whois() {
     clear
     figlet whois
+    linha
+    echo "Consulta informações sobre um domínio registrado"
+    linha
     echo
-    read -p "Informe o site para consulta: " site
+    read -p "Informe o site para consulta (ex. www.ubuntu.com): " site
     whois $site
     echo
+    linha
     aguarde
 }
 
@@ -222,96 +228,137 @@ anti_virus() {
 function menu() {
 # Loop para apresentar o menu até que o usuário escolha a opção de sair
 clear
-echo "##############################################################################"
+linha
 figlet .....CETAM Redes....
 echo "                   CENTRO DE EDUCAÇÃO TECNOLÓGICA DO AMAZONAS"
-echo  "                         by: prof. marcelo fournier v1.1"
-echo 
-echo "############################## Admin Redes Linux #############################"
+echo  "                         by: prof. marcelo fournier v1.2"
+#echo 
+linha
 data_aspas=`date`
 host_aspas=`hostname`
 usuario_aspas=`whoami`
 mascara_rede=$(ip -o -f inet addr show | awk '{print $4}')
 echo "$data_aspas. Host: $host_aspas. Usuario: $usuario_aspas"
 echo "$mascara_rede"
-echo "##############################################################################"
+linha
 }
 
 while true; do
   menu 
-  echo    " |  1. Usuários           | 9.  ifconfig (ip) | 17. Dicas e notas            |"
-  echo    " |  2. Pacotes            | 10. netstat (ss)* | 18. Ambiente gráfico         |" 
-  echo    " |  3. Servicos           | 11. ethtool     * | 19. Calcular rede            |"
-  echo    " |  4. Nmap na rede       | 12. roteamento    | 20. Firewall ufw             |"
-  echo    " |  5. Log do sistema     | 13. whois         | 21. Decimal/binário          |"
-  echo    " |  6. Crontab            | 14. traceroute  * | 22. Binário/decimal          |"
-  echo    " |  7. Grupos             | 15. dig           | 23. geoiplookup              |"
-  echo    " |  8. Journal log        | 16. nmap          | 24. IP externo  25. Glossário|"
-  #echo    " ----------------------------------------------------------------------------"
-  echo    " |  30. Discos            | 31. USBs          | 32. Espaço em RAM e discos   |"
-  echo    " |  33. Speed conexão     | 34. Antivirus     | 35. Checar vulnerabilidades  |"
-  echo    " ----------------------------------------------------------------------------"
-  read -p "  ===> Escolha uma opção (0 para SAIR): " opcao
+  echo    "| SERVIÇOS LOCAIS  |   SERVIÇOS DE REDE    |       DIVERSOS        |    OUTROS & DOCS    |"
+  linha
+  echo    "| 1. Usuários      | 11. Antivirus         | 21. Roteamento rede   | 31. Ambiente gráfico|"
+  echo    "| 2. Grupos        | 12. Vulnerabilidades  | 22. Calcular rede IP  | 32.                 |" 
+  echo    "| 3. Programas     | 13. IP interno        | 23. Geolocalização IP | 33.                 |"
+  echo    "| 4. Memória       | 14. IP externo        | 24. python web server | 34.                 |"
+  echo    "| 5. Discos        | 15. Placas de rede    | 25. Gerar carga CPU   | 35.                 |" 
+  echo    "| 6. USBs          | 16. Tráfego na rede   | 26. whois             | 36. Decimal/binário |"
+  echo    "| 7. Serviços      | 17. Varredura rede    | 27. dig               | 37. Binário/decimal |"
+  echo    "| 8. Crontab       | 18. Conexões na rede  | 28. journal log       | 38. Dicas e notas   |"
+  echo    "| 9. Firewall      | 19. Speed test        | 29.                   | 39. Glossário       |"
+  echo    "| 10. SSH tools    | 20. Largura de banda  | 30.                   | 40. Host shutdown   |"
+  linha
+  read -p " ===> Escolha uma opção (0 para SAIR): " opcao 
 
   case $opcao in
     1)
       ./xusuarios.sh
       aguarde;;
-    2)
-      sudo ./xpacotes.sh
-      aguarde;;
-    3)
-      sudo ./xservicos.sh
-      aguarde;;
+    2) #grupos
+       ./xgrupos.sh
+       aguarde;;
+    3)  #programas/pacotes
+        sudo ./xpacotes.sh
+        aguarde;;
+    4)  clear
+        figlet "ram e discos"
+        echo "Memória RAM e discos locais"
+        linha
+        free -h
+        echo
+        df -h
+        aguarde;;
+     5) #discos
+        clear
+        figlet "discos linux"
+        linha
+        lsblk
+        linha
+        aguarde;;
+     6) # usb lista
+        clear
+        figlet "usb"
+        linha
+        lsusb -tv
+        linha
+        aguarde;;
+     7) #servicos
+        sudo ./xservicos.sh
+        aguarde;;
+      8) #crontab
+         ./xcrontab.sh
+        aguarde;;
+
     4)
       sudo ./xnmap.sh
       aguarde;;
     5)
       ./xlog.sh
       aguarde;;
+    9) firewall_ufw;;
+    10) ./xssh.sh;;
+    11) ./xclamav.sh;;
+    12) ./xrkhunter.sh;;
+    13) ip addr show | grep 'inet ' | awk '{print $2}' | cut -d '/' -f1
+        aguarde;;
+    14) ip_externo;;
+    15) #placas de rede
+        sudo ./xifconfig.sh
+        aguarde;;
+    16) clear
+       figlet "iftop linux"
+       ifconfig
+       read -p "Informe a interface de rede desejada: " interface
+       sudo iftop -i $interface
+       aguarde;;
+    17) funcao_nmap;;
+    18) sudo ./xss.sh;;
+    19) velocidade_conexao;;
+    20) ./xlargurabanda.sh;;
+    21) ./rotas.sh
+        aguarde;;
+    22) calcula_rede;;
+    23) geolocalizacao;; 
+    24) #python http server
+        clear
+        figlet "http server"
+        linha
+        python3 -m http.server
+        aguarde;;     
+    25) #gerar carga
+        clear
+        figlet "gerar carga"
+        linha
+        ./gerar_carga.sh
+        aguarde;;
+  
+    26) funcao_whois;;
+    27) funcao_dig;;
 
-    6)
-      ./xcrontab.sh
-      aguarde;;
+    28) ./xjournal.sh;;
 
-    7) ./xgrupos.sh
-       aguarde;;
-       
-    8) ./xjournal.sh
-       aguarde;;
-       
-    9) sudo ./xifconfig.sh
-       aguarde;;
-    12) ./rotas.sh
-        aguarde;;   
-    13) funcao_whois;;
-    15) funcao_dig;;
-    16) funcao_nmap;;
-    17) documentacao;;
-    18) ambientes_graficos;; 
-    19) calcula_rede;;
-    20) firewall_ufw;;
-    21) decimal_binario;;
-    22) binario_decimal;;
-    23) geolocalizacao;;
-    24) ip_externo;;
-    25) ./glossario.sh;;
-    
-    30) clear
-        lsblk
-        aguarde;;
-    31) clear
-        lsusb -tv
-        aguarde;;
-    32) clear
-        figlet "ram e discos"
-        free -h
-        echo
-        df -h
-        aguarde;;
-    33) velocidade_conexao;;
-    34) ./xclamav.sh;;
-    35) ./xrkhunter.sh;;
+
+    31) ambientes_graficos;; 
+    36) decimal_binario;;
+    37) binario_decimal;;
+    38) documentacao;;
+    39) ./glossario.sh;;
+
+
+    40) clear
+        figlet "shutdown"
+        linha
+        sudo shutdown now;;
     0)  
       sair;;
       

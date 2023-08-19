@@ -1,5 +1,7 @@
 #!/bin/bash
-
+linha() {
+    echo "------------------------------------------------------------------"
+}
 aguarde() {
    echo
    read -p "Pressione qualquer tecla para continuar..." tecla
@@ -44,6 +46,8 @@ remover_rota() {
 visualizar_rede() {
   echo
   ifconfig
+  echo
+  linha
   aguarde
 }
 
@@ -55,6 +59,8 @@ add_gateway() {
     route add default gw $gw $interface
     aguarde
     route -n
+    echo
+    linha
     aguarde
 }
 
@@ -62,14 +68,16 @@ add_gateway() {
 while true; do
     clear
     figlet roteamento
-    echo
+    linha
     echo "Menu de Opções:"
+    linha
     echo "1. Visualizar tabela de roteamento"
     echo "2. Visualizar interfaces de rede"
     echo "3. Adicionar rota"
     echo "4. Remover rota"
     echo "5. Adicionar gateway padrão (default gateway)"
     echo "0. Sair"
+    linha
     read -p "Escolha uma opção: " opcao
 
     case $opcao in
