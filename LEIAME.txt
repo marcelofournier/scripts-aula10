@@ -1,0 +1,25 @@
+ATENÇÃO:
+
+Este script foi desenvolvido no ambiente de aulas do CETAM - Centro de Educacao Tecnologica do Amazonas e
+possui 2 objetivos essenciais:
+	1. Ser funcional e ajudar aos alunos nas aulas práticas de laboratório de redes com linux;
+	2. Encorajar os alunos do curso de redes de computadores a desenvolverem seus próprios scripts de forma
+	fácil.
+	
+O script principal e que deve ser executado de início é o main.sh
+
+Para executá-lo:
+
+1. Altere as permissões: chmod +x *.sh
+2. Execute o arquivo: ./main.sh
+
+
+Este script é de código aberto e livre e pode ser baixado no github com o seguinte comando:
+
+git clone https://github.com/marcelofournier/scripts-aula10
+
+
+--------------------------------------
+Prof. Marcelo Fournier
+prof.marcelofournier@gmail.com
+

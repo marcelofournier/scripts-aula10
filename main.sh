@@ -309,7 +309,9 @@ while true; do
     10) ./xssh.sh;;
     11) ./xclamav.sh;;
     12) ./xrkhunter.sh;;
-    13) ip addr show | grep 'inet ' | awk '{print $2}' | cut -d '/' -f1
+    #13) ip addr show | grep 'inet ' | awk '{print $2}' | cut -d '/' -f1
+        #aguarde;;
+    13) ./classe-rede.sh
         aguarde;;
     14) ip_externo;;
     15) #placas de rede

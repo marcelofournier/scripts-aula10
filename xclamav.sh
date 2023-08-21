@@ -2,6 +2,13 @@
 linha() {
     echo "------------------------------------------------------------------"
 }
+
+aguarde() {
+   echo
+   read -p "Pressione qualquer tecla para continuar..." tecla
+   echo
+}
+
 while true; do
     clear
     figlet "Antivirus linux"
@@ -21,29 +28,33 @@ while true; do
     case $choice in
         1)
             sudo apt-get update
-            sudo apt-get install clamav
-            ;;
+            sudo apt-get install clamav clamav-daemon clamav-freshclam clamtk
+            aguarde;;
         2)
             sudo systemctl start clamav-daemon
             sudo systemctl enable clamav-daemon
             echo "Daemon habilitado e em execução."
-            ;;
-        3)  sudo systemctl status clamav-daemon;;
+            aguarde;;
+        3)  sudo systemctl status clamav-daemon
+            aguarde;;
         4)
             sudo systemctl stop clamav-daemon
             sudo systemctl disable clamav-daemon
             echo "Daemon desabilitado."
-            ;;
+            aguarde;;
         5)
             read -p "Digite o caminho completo para o arquivo a ser analisado: " file_path
             sudo clamscan "$file_path"
+            linha
+	    aguarde
             ;;
         6)
             read -p "Digite o caminho completo para o diretório a ser analisado: " dir_path
             sudo clamscan -r "$dir_path"
+            linha
+	    aguarde
             ;;
         0)
-            echo "Saindo..."
             exit 0
             ;;
         *)

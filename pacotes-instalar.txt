@@ -1,0 +1,10 @@
+htop
+iftop
+iotop
+iperf
+nmap
+ufw
+figlet
+nano
+
+

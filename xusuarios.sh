@@ -18,6 +18,7 @@ exibir_menu() {
     echo "4. Usuarios logados"
     echo "5. Últimos logins bem sucedidos"
     echo "6. Tentativas de logins mal sucedidas"
+    echo "7. Alterar senha de usuário"
     echo "0. Sair"
     linha
 }
@@ -90,6 +91,16 @@ while true; do
             sudo lastb
             aguarde;;
 
+        7)  clear
+            figlet "password"
+            linha
+            echo "Alterar senha de usuário"
+            linha
+            read -p "Informe o nome do usuário cuja a senha deve ser alterada: " usuario
+            sudo passwd $usuario
+            linha
+            aguarde
+            ;;
         0)  exit 0;;
         *)  echo "Opção inválida"
             aguarde ;;

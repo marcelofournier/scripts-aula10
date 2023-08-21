@@ -35,7 +35,7 @@ if [[ "$escolha" =~ ^[0-9]+$ && "$escolha" -ge 1 && "$escolha" -le ${#arquivos_t
   arquivo_escolhido="${arquivos_txt[escolha-1]}"
   # Abre o arquivo com o editor de texto (neste caso, usamos o nano)
   clear
-  cat "$arquivo_escolhido"
+  cat "$arquivo_escolhido" | more
   echo
   aguarde
 
