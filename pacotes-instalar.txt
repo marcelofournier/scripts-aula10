@@ -1,4 +1,5 @@
 htop
+btop
 iftop
 iotop
 iperf
@@ -6,5 +7,18 @@ nmap
 ufw
 figlet
 nano
-
+ranger
+elinks
+speedtest-cli
+clamav 
+clamav-freshclam 
+clamav-daemon
+rkhunter
+cmatrix
+tmux
+wget
+openssh-server
+iwatch
+imagemagic
+popplet-utils
 

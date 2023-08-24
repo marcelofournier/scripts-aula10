@@ -341,7 +341,7 @@ while true; do
         clear
         figlet "gerar carga"
         linha
-        ./gerar_carga.sh
+        ./gerar-carga.sh
         aguarde;;
   
     26) funcao_whois;;

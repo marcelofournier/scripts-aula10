@@ -7,6 +7,10 @@ function aguarde() {
   read -p "Pressione qualquer tecla para continuar... " tecla
 }
 
+linha() {
+    echo "-------------------------------------------------------------------------------------------"
+}
+
 function query_mx_records() {
     echo
     read -p "Digite o nome de domínio para consultar os registros MX: " domain
@@ -23,23 +27,24 @@ atualizar_pacotes() {
 function display_menu() {
     clear
     figlet ambientes graficos
-    echo
-    echo "===== Menu de Opções ====="
-    echo "1.  ubuntu-gnome-desktop"
-    echo "2.  xubuntu-desktop"
-    echo "3.  lubuntu-desktop"
-    echo "4.  kubuntu-desktop"
-    echo "5.  kde"
-    echo "6.  mate-desktop-environment"
-    echo "7.  elementary-desktop"
-    echo "8.  blackbox"
-    echo "9.  herbstluftwm"
-    echo "10. awesome"
-    echo "11. bspwm"
-    echo "12. qtile"
-    echo "13. icewm"
-    echo "14. i3"
-    echo "15. sway"
+    linha
+    echo "Ambientes gráficos: instalação e inicialização"
+    linha
+    echo "1.  instalar o ubuntu-gnome-desktop"
+    echo "2.  instalar o xubuntu-desktop"
+    echo "3.  instalar o lubuntu-desktop"
+    echo "4.  instalar o kubuntu-desktop"
+    echo "5.  instalar o kde-plasma-desktop"
+    echo "6.  instalar o mate-desktop-environment"
+    echo "7.  instalar o elementary-desktop"
+    echo "8.  instalar o blackbox window manager"
+    echo "9.  instalar o fluxbox window manager"
+    echo "10. instalar o awesome window manager"
+    echo "11. icewm"
+    echo "12. i3-wm"
+    echo "13. "
+    echo "14. "
+    echo "15. "
     echo "0. Sair"
     echo "========================================="
 }
@@ -148,17 +153,17 @@ while true; do
         2) _xubuntu-desktop;;
         3) _lubuntu-desktop;;
         4) _kubuntu-desktop;;
-        5) _kde-full;;
+        5) sudo apt install kde-plasma-desktop;;
         6) _mate-desktop-environment;;
         7) _elementary-desktop;;
         8) _blackbox;;
-        9) _herbstluftwm;;
+        9) sudo apt install fluxbox;;
         10) _awesome;;
-        11) _bspwm;;
-        12) _qtile;;
-        13) _icewm;;
-        14) _i3;;
-        15) _sway;;
+        11) _icewm;;
+        12) _i3;;
+        13) ;;
+        14) ;;
+        15) ;;
         0) break;;
         *) echo "Opção inválida. Tente novamente." ;;
     esac

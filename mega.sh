@@ -78,7 +78,7 @@ inicializa()
             shuf -i 1-60 -n 6 >> "$bilhete.bil"
             cat  "$bilhete.bil"    >> bilhetes_gerados.dat
             cat  "$bilhete.bil"    >> ns.dat
-            #echo "$bilhete gerado"
+            echo "$bilhete gerado"
 
             #echo "=================================" >> resultado.dat
         done

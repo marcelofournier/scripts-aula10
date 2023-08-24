@@ -1,0 +1,53 @@
+
+
+Uma alternativa à autenticação por senha é usar a autenticação com par de chaves SSH, 
+na qual você gera uma chave SSH e a armazena em seu computador.
+
+As chaves SSH são uma maneira fácil de identificar computadores confiáveis, 
+sem envolver senhas. Eles são amplamente usados ​​por administradores de rede e sistemas 
+para controlar servidores remotamente.
+
+Além disso, a autenticação por chave SSH é mais segura do que a autenticação por senha e, 
+sem dúvida, mais conveniente. O conceito principal é que em vez de uma senha, 
+usa-se um arquivo de chave que é virtualmente impossível de adivinhar.
+
+Você fornece a parte pública da sua chave e, ao fazer o login, ela será usada, 
+juntamente com a chave privada e o nome de usuário, para verificar a sua identidade.
+
+
+As chaves SSH têm inúmeras vantagens sobre as senhas:
+
+Maior segurança: são quase impossíveis de adivinhar ou usar força bruta.
+Facilidade de gerenciamento: Chega de criar e alterar senhas aleatórias.
+Tarefas automatizadas: como você não precisa digitar sua senha todas as vezes, 
+é mais fácil automatizar tarefas que exigem SSH.
+
+As etapas do procedimento abaixo mostrarão como gerar um par de chaves SSH e adicionar 
+a chave pública ao servidor.
+
+Como gerar um par de chaves SSH para poder autenticar remotamente
+
+Nesse tutorial você aprenderá a gerar um par de chaves SSH em sua própria máquina que pode 
+ser usado para autenticar sua conexão com um servidor remoto.
+
+Ao gerar chaves SSH no Linux, você pode usar o comando ssh-keygen. É uma ferramenta para 
+criar novos pares de chaves de autenticação para SSH.
+
+Para gerar um par de chaves SSH, abra o terminal e digite o seguinte comando:
+ssh-keygen -t rsa
+
+Em seguida, basta pressionar enter quando ele solicitar o arquivo, a frase-senha, a mesma 
+frase-senha. Ele gera um par de chaves no diretório ~/.ssh por padrão.
+
+Agora você tem dois arquivos:
+
+id_rsa (a chave privada). A chave privada é armazenada em seu computador local e deve ser 
+mantida em segurança, com permissões definidas para que nenhum outro usuário em seu computador 
+possa ler o arquivo.
+
+id_rsa.pub (a chave pública). A chave pública é colocada no servidor em que você pretende fazer login. Você pode compartilhar livremente sua chave pública com outras pessoas.
+Você pode colocar a chave pública em qualquer servidor e, em seguida, conectar-se ao servidor usando ssh. Quando as chaves pública e privada coincidem, o servidor SSH concede acesso sem a necessidade de uma senha.
+
+Para aumentar a segurança, você pode gerar uma chave SSH ainda maior com a opção -b. O sinalizador -b instrui o ssh-keygen a aumentar o número de bits usados ​​para gerar o par de chaves e é sugerido para segurança adicional. Por exemplo, para 4096 bits faça:
+ssh-keygen -t rsa -b 4096
+
