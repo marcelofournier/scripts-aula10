@@ -21,4 +21,5 @@ openssh-server
 iwatch
 imagemagic
 popplet-utils
+vlc
 
