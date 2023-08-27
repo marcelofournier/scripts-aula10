@@ -1,0 +1,24 @@
+O o campo TTL ao lado de cada ping é usado para definir o limite máximo de roteadores (hops) que o pacote 
+pode percorrer antes de ser descartado. Isso é usado para evitar que pacotes fiquem circulando 
+indefinidamente na rede.
+
+O campo time mostra o tempo, em milissegundos (ms), que levou para que um pacote de dados viajasse do 
+computador remetente para o destino e voltasse ao remetente. Esse tempo é o tempo de ida e volta 
+(Round-Trip Time, RTT) do pacote.
+
+O RTT é uma métrica importante para medir a latência de rede. Latência é o tempo que leva para os dados 
+percorrerem a rede de um ponto a outro. O RTT é crítico em aplicativos que exigem respostas rápidas, como 
+chamadas de voz sobre IP (VoIP), videoconferências, jogos online e outros serviços em tempo real. Um RTT 
+baixo geralmente é desejável, pois indica uma conexão de rede mais rápida e responsiva.
+
+    1. min (mínimo) ==> Este é o menor tempo de ida e volta registrado durante o teste. Ele representa o 
+    melhor 
+    desempenho da conexão em termos de latência. 
+    2. avg (média) ==> Esse é o tempo médio de ida e volta calculado a partir de várias medições durante o 
+    teste. Ele representa o tempo médio que um pacote leva para ir e voltar. 
+    3. max (máximo) ==> Esse é o maior tempo de ida e volta registrado durante o teste. Ele representa o pior 
+    desempenho da conexão em termos de latência.
+    4. mdev ==> significa desvio. Quanto menor este valor, melhor. Isso significa que temos uma baixa 
+    variação da latência, ou seja, um baixo jitter.
+    5. Jitter é a variação entre os valores de latência. Quanto menor, melhor. Quanto menor o mdev, mais 
+    consistente é a conexão de rede.

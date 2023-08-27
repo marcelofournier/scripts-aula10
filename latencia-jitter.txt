@@ -1,0 +1,53 @@
+Numa rede local de pequeno ou médio porte não é normal termos uma alta latência ou jitter. Entretanto isso 
+pode ocorrer com frequência caso ocorram alguns fatores que derrubem o desempenho da rede. Ter essa visão é 
+importante pois nos faz entender que nem só de equipamentos ou um bom backbone se faz uma rede.
+
+Medir a latência e o jitter em uma rede local é fundamental para detectar problemas de desempenho e 
+qualidade da rede, especialmente ao ajustar ou dimensionar seu backbone.
+
+Latência:
+
+A latência é o atraso que ocorre na transmissão de dados de um ponto para outro em uma rede. Isso inclui o 
+tempo que leva para um pacote de dados viajar de um dispositivo para outro.
+
+Importância: Uma alta latência pode causar lentidão na rede e atrasos perceptíveis na comunicação entre 
+dispositivos. Isso pode ser crítico em aplicações em tempo real, como videoconferências e jogos online. 
+
+Como medir: A latência é geralmente medida em milissegundos (ms) e pode ser testada usando ferramentas de ping ou 
+tracert para medir o tempo de ida e volta entre dispositivos na rede. Jitter:
+
+O jitter se refere à variação na latência ao longo do tempo. Em outras palavras, é a flutuação na 
+chegada de pacotes de dados. Importância: O jitter é crítico para aplicações sensíveis ao tempo, como voz 
+sobre IP (VoIP) e videoconferências. Um jitter excessivo pode causar distorções de áudio ou vídeo e afetar a 
+qualidade da comunicação. Como medir: O jitter é geralmente medido em milissegundos e pode ser avaliado 
+usando ferramentas de teste de qualidade de serviço (QoS) ou analisadores de rede. Ao medir a latência e o 
+jitter em uma rede local, você pode:
+
+Identificar gargalos de rede: Altas latências podem indicar congestionamentos na rede ou problemas em 
+dispositivos de rede. Identificar esses gargalos é o primeiro passo para solucioná-los.
+
+Avaliar a qualidade do serviço: Se você está executando serviços sensíveis ao tempo, como VoIP ou 
+videoconferências, o jitter é um indicador crítico da qualidade do serviço. Reduzir o jitter é fundamental 
+para garantir uma comunicação de alta qualidade.
+
+Planejar para expansão: Se você está dimensionando o backbone da rede, a medição da latência e do jitter 
+ajuda a determinar as necessidades de largura de banda e a capacidade de resposta da rede.
+
+Solucionar problemas: Quando os problemas de desempenho ocorrem, a latência e o jitter são métricas úteis 
+para solucionar problemas. Você pode usar essas métricas para isolar a causa dos problemas e implementar 
+ajustes necessários.
+
+
+Possíveis causas de alta latência ou jitter em uma rede local:
+
+Problemas de Roteamento: Configurações inadequadas de roteadores e switches na rede local podem causar rotas 
+ineficientes e, consequentemente, aumentar a latência e o jitter.
+
+Problemas de Hardware: Falhas em dispositivos de rede, cabos defeituosos ou placas de rede com problemas 
+podem afetar o desempenho da rede.
+
+Interferência de Rede Sem Fio: Em redes Wi-Fi, a interferência de outras redes sem fio, dispositivos 
+eletrônicos ou obstáculos físicos entre o roteador e os dispositivos podem levar a latência e jitter.
+
+Configuração de Qualidade de Serviço (QoS) Inadequada: Configurações de QoS inadequadas podem resultar em 
+priorização incorreta de tráfego, causando variações na latência.

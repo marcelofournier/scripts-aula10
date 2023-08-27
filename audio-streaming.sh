@@ -15,10 +15,10 @@ clear
 
 # Função para iniciar o streaming de áudio
 start_streaming() {
-    echo "Iniciando streaming de áudio no servidor..."
-    read -p "Informe a porta para transmitir o áudio: " porta
-    #cvlc -vvv musica.mp3 --sout '#standard{access=http,mux=ogg,dst=:5001}' --loop
-    cvlc -vvv musica.mp3 --sout '#standard{access=http,mux=ogg,dst=:"porta"}' --loop    
+    echo "Iniciando streaming de áudio no servidor na porta 5001..."
+    #read -p "Informe a porta para transmitir o áudio: " porta
+    cvlc -vvv musica.mp3 --sout '#standard{access=http,mux=ogg,dst=:5001}' --loop
+    #cvlc -vvv musica.mp3 --sout '#standard{access=http,mux=ogg,dst=:"$porta"}' --loop    
     aguarde
 }
 
@@ -31,13 +31,16 @@ stop_streaming() {
 
 # Função para conectar ao streaming de áudio como cliente
 connect_streaming() {
-    echo "Conectar ao streaming de áudio como cliente..."
-    #read -p "Informe o IP e a porta do servidor de streaming (exemplo: 192.168.15.10:5000): " servidor
+    echo "Usaremos a porta 5001 do servidor remoto"
+    echo "A seguir, ao informar o servidor, inclua a porta 5001 após o IP:5001"
+    echo
+    echo "Conectar ao streaming de áudio como cliente na porta 5001 do servidor..."
+    read -p "Informe o IP do servidor de streaming (exemplo: 192.168.15.10:5001): " servidor
     #read -p "Informe a porta utilizada na transmissão: " porta
     sudo apt install vlc
     #while true; do cvlc http://192.168.15.68:5001; done
-    #while true; do cvlc http://$servidor; done
-    cvlc http://192.168.15.68:5001  # Substitua pelo seu endereço e porta
+    cvlc http://$servidor
+    #cvlc http://192.168.15.68:5001  # Substitua pelo seu endereço e porta
     aguarde
 }
 
