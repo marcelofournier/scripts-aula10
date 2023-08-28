@@ -1,0 +1,27 @@
+Git o versionador de software tudo de bom
+
+O git é uma ferramenta fantástica criada pelo Linus Tovards (o criador do Linux).
+
+Sua ideia foi permitir que programadores do mundo inteiro pudessem colaborar no desenvolvimento do próprio 
+linux. Após anos de uso foi criada uma plataforma chamada github, hospedado no site http://github.com. 
+Qualquer pessoa pode criar sua própria conta de usuário lá e deixar código fonte de seus programas lá, seja 
+no modo público ou privado.
+
+Para clonar um código fonte de um repositório do github basta usar a seguinte comando no linux:
+
+	git clone https://github.com/marcelofournier/scripts-aula10
+	
+Observe que a parte do marcelofournier é o nome da conta do usuário e a parte do scripts-aula é o nome de uma 
+dos repositórios dessa conta, que no caso, está público.
+
+Para verificar se existe alguma alteração no repositório remoto em relação aos arquivos clonados basta 
+digitar:
+
+	cd scripts-aula10 (entre no diretório onde o script está na sua máquina local)
+	git status 
+
+O git fará uma verificação e lhe mostrará se há novidades.
+
+
+
+

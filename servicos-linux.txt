@@ -1,0 +1,39 @@
+SERVIÇOS NO LINUX
+1. **Serviços e daemons:**
+No Linux, os serviços são programas que são executados em segundo plano (daemons) para
+fornecer funcionalidades específicas. Eles são controlados usando comandos como `systemctl`,
+`service`, `init.d`, dependendo da versão do Linux.
+2. **Verificar status do serviço:**
+Para verificar o status de um serviço, use o comando `systemctl status nome_do_servico` ou
+`service nome_do_servico status`. Isso mostrará se o serviço está ativo, inativo ou com erro.
+3. **Iniciar um serviço:**
+Para iniciar um serviço, utilize o comando `systemctl start nome_do_servico` ou `service
+nome_do_servico start`.
+4. **Parar um serviço:**
+Para parar um serviço, utilize o comando `systemctl stop nome_do_servico` ou `service
+nome_do_servico stop`.
+5. **Reiniciar um serviço:**
+Para reiniciar um serviço, utilize o comando `systemctl restart nome_do_servico` ou `service
+nome_do_servico restart`.
+6. **Habilitar um serviço na inicialização:**
+Para fazer com que um serviço inicie automaticamente durante o boot, use o comando `systemctl
+enable nome_do_servico` ou `service nome_do_servico enable`.
+7. **Desabilitar um serviço na inicialização:**
+Para impedir que um serviço inicie automaticamente durante o boot, utilize o comando `systemctl
+disable nome_do_servico` ou `service nome_do_servico disable`.
+8. **Recarregar configurações do serviço:**
+Se você fez alterações nas configurações de um serviço, pode recarregar essas configurações sem
+reiniciar o serviço usando o comando `systemctl reload nome_do_servico` ou `service
+nome_do_servico reload`.
+9. **Logs do serviço:**
+Para visualizar os logs de um serviço, use o comando `journalctl -u nome_do_servico`. Isso
+mostrará o registro de eventos e erros relacionados ao serviço.
+10. **Outros comandos úteis:**
+- `systemctl list-units`: Lista todas as unidades (serviços) disponíveis.
+- `systemctl --failed`: Lista os serviços que falharam.
+- `systemctl status`: Mostra o status geral do sistema de inicialização.
+É importante notar que alguns comandos podem exigir privilégios de superusuário (root), nesse
+caso, use `sudo` antes dos comandos para realizar as operações com as devidas permissões. Por
+exemplo: `sudo systemctl start nome_do_servico`.
+
+

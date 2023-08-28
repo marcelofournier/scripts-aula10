@@ -1,0 +1,24 @@
+Largura de banda e taxa de transmissão numa rede de computadores
+
+A largura de banda e a taxa de transmissão são dois conceitos fundamentais na comunicação de dados, 
+especialmente no contexto das redes de computadores e da internet.
+
+**Largura de banda** refere-se à capacidade máxima de uma conexão de rede para transportar dados de um ponto 
+a outro em um determinado período de tempo. É geralmente medida em bits por segundo (bps) ou suas múltiplas, 
+como kilobits por segundo (Kbps), megabits por segundo (Mbps) e gigabits por segundo (Gbps). Quanto maior a 
+largura de banda, maior é a quantidade de dados que pode ser transmitida em um período de tempo dado. Uma 
+largura de banda mais alta permite que mais informações sejam enviadas simultaneamente, resultando em uma 
+experiência de comunicação mais rápida e eficiente.
+
+**Taxa de transmissão**, por outro lado, é a quantidade real de dados que está sendo transmitida através de 
+uma conexão de rede em um dado momento. Ela é medida da mesma forma que a largura de banda, em bits por 
+segundo. A taxa de transmissão pode variar dependendo de vários fatores, incluindo a largura de banda 
+disponível, a qualidade da conexão e a demanda de dados naquele momento específico. Quando se fala em 
+velocidade de internet, muitas vezes está-se referindo à taxa de transmissão, que pode ser menor do que a 
+largura de banda máxima em condições de uso real.
+
+Em resumo, a largura de banda representa a capacidade potencial de uma conexão de rede, enquanto a taxa de 
+transmissão representa a quantidade real de dados que está sendo transmitida em um dado momento. Ambos os 
+conceitos desempenham um papel fundamental na determinação da eficiência e da velocidade de comunicação de 
+dados em redes de computadores e na internet.
+

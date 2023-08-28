@@ -1,0 +1,55 @@
+Frame Relay: A Base da Comunicação de Dados de Alta Velocidade
+------------------------------------------------------------------------------------------
+
+O Frame Relay é um protocolo de comunicação de dados que teve um papel significativo na evolução das redes de 
+telecomunicações, especialmente nas décadas de 1980 e 1990. Embora tenha perdido parte de sua relevância com 
+o advento de tecnologias mais recentes, o Frame Relay desempenhou um papel crucial no estabelecimento de 
+redes de alta velocidade e baixa latência em sua época.
+
+O que é o Frame Relay?**
+
+O Frame Relay é um protocolo de camada 2 do modelo OSI (Open Systems Interconnection) que permite a 
+transmissão eficiente de dados em redes de longa distância. Ele é conhecido por sua simplicidade e 
+eficiência, pois opera com base em pacotes chamados "frames", que são unidades de dados encapsulados. Ao 
+contrário do TCP/IP, o Frame Relay não é orientado a conexão, o que significa que não estabelece uma conexão 
+antes de enviar dados.
+
+Características Principais do Frame Relay:
+
+1. **Largura de Banda Compartilhada**: O Frame Relay utiliza uma abordagem de largura de banda compartilhada, 
+o que significa que os recursos da rede são compartilhados entre vários usuários. Isso o torna econômico e 
+escalável.
+
+2. **Simplicidade**: Comparado a protocolos mais complexos, como o ATM (Asynchronous Transfer Mode), o Frame 
+Relay é mais fácil de configurar e gerenciar.
+
+3. **Baixa Latência**: Devido à sua simplicidade, o Frame Relay introduz menos atraso na transmissão de 
+dados, tornando-o adequado para aplicações sensíveis à latência.
+
+4. **Qualidade de Serviço (QoS)**: O Frame Relay oferece alguma forma de QoS, permitindo que os provedores de 
+serviços priorizem diferentes tipos de tráfego.
+
+5. **Conexões Permanentes e Discadas**: O Frame Relay suporta conexões permanentes e discadas, o que o torna 
+flexível para atender às necessidades de diferentes tipos de tráfego.
+
+**Aplicações do Frame Relay:**
+
+O Frame Relay foi amplamente utilizado em redes corporativas e de telecomunicações nas décadas de 1980 e 
+1990. Suas aplicações incluíam:
+
+1. **Redes de Área Ampla (WANs)**: Empresas utilizavam o Frame Relay para conectar filiais e locais remotos 
+em uma WAN de alta velocidade.
+
+2. **Acesso à Internet**: Provedores de serviços de Internet usavam o Frame Relay para fornecer conectividade 
+de alta velocidade a empresas e consumidores.
+
+3. **Serviços de Voz e Dados**: O Frame Relay era utilizado para transportar tráfego de voz e dados, 
+incluindo serviços de linha privada.
+
+Resumo:
+
+Embora o Frame Relay tenha perdido terreno para tecnologias mais recentes, como o MPLS (Multiprotocol Label 
+Switching) e a Internet de alta velocidade, suas contribuições para o desenvolvimento de redes de dados de 
+alta velocidade não podem ser subestimadas. Sua simplicidade, eficiência e capacidade de suportar uma 
+variedade de aplicativos o tornaram uma escolha valiosa em sua era. Hoje, enquanto sua popularidade diminuiu, 
+o Frame Relay ainda permanece como parte da história da evolução das redes de comunicação de dados.

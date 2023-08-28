@@ -254,7 +254,7 @@ while true; do
   echo    "| 5. Discos        | 15. Placas de rede    | 25. Gerar carga CPU   | 35. Ambiente gráfico|" 
   echo    "| 6. USBs          | 16. Tráfego na rede   | 26. whois             | 36. Decimal/binário |"
   echo    "| 7. Serviços      | 17. Varredura rede    | 27. Streaming na rede | 37. Binário/decimal |"
-  echo    "| 8. Crontab       | 18. Conexões na rede  | 28. Log do sistema    | 38. Dicas e notas   |"
+  echo    "| 8. Crontab       | 18. Conexões na rede  | 28. Log do sistema    | 38. Ajuda e notas   |"
   echo    "| 9. Firewall      | 19. Speed test        | 29. journal log       | 39. Glossário       |"
   echo    "| 10. SSH tools    | 20. Largura de banda  | 30. Atividade em disco| 40. Host shutdown   |"
   linha
